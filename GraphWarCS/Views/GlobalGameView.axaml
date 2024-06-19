@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:GraphWarCS.ViewModels"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="GraphWarCS.Views.GlobalGameView"
+			 x:DataType="vm:GlobalGameViewModel">
+	<Grid 
+		ColumnDefinitions="*,36*,*,24*,*"
+		RowDefinitions="*,20*,*">
+		<StackPanel
+			Grid.Column="1"
+			Grid.Row="1"
+			VerticalAlignment="Stretch"
+			Orientation="Vertical">
+			<TextBlock
+				Classes="Heading">
+				Created Rooms
+			</TextBlock>
+			<ScrollViewer>
+				<ListBox>
+
+				</ListBox>
+			</ScrollViewer>
+			<TextBlock
+				Classes="Heading">
+				Chat
+			</TextBlock>
+			<ScrollViewer>
+				<TextBlock Text="{Binding Chat}"/>
+			</ScrollViewer>
+			<TextBox>
+				
+			</TextBox>
+		</StackPanel>
+		<DockPanel 
+			Grid.Column="3"
+			Grid.Row="1">
+			<TextBlock 
+				Classes="Heading"
+				DockPanel.Dock="Top">
+				Online Players
+			</TextBlock>
+			<ScrollViewer 
+				VerticalAlignment="Stretch"
+				DockPanel.Dock="Top">
+				<ListBox ItemsSource="{Binding Players}">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<Border 
+								BorderBrush="Black"
+								BorderThickness="1">
+								<TextBlock Text="{Binding}"/>
+							</Border>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</ScrollViewer>
+			<Button 
+				DockPanel.Dock="Top"
+				>
+				Create
+			</Button>
+			<Button 
+				DockPanel.Dock="Bottom"
+				Command="{Binding BackCommand}">
+				Back
+			</Button>
+		</DockPanel>
+	</Grid>
+</UserControl>

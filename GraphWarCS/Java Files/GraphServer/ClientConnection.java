@@ -27,7 +27,7 @@ import java.util.List;
 public class ClientConnection implements Runnable
 {
 	private Connection connection;	
-	private List<Player> players;	
+	private List<Player> players;
 	private GraphServer server;	
 	private boolean running;	
 	private boolean leader;

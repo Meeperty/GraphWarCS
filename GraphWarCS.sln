@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphWarCS.Desktop", "GraphWarCS.Desktop\GraphWarCS.Desktop.csproj", "{080FD8BD-7476-446C-8DBE-CE54CD76941A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphWarCS.Browser", "GraphWarCS.Browser\GraphWarCS.Browser.csproj", "{D83E42A8-671A-44BF-AD25-28D359ED3628}"
+	ProjectSection(ProjectDependencies) = postProject
+		{080FD8BD-7476-446C-8DBE-CE54CD76941A} = {080FD8BD-7476-446C-8DBE-CE54CD76941A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
