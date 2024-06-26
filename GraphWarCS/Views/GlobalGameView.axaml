@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:GraphWarCS.ViewModels"
+			 xmlns:gwar="using:GraphWarCS"
 			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="GraphWarCS.Views.GlobalGameView"
 			 x:DataType="vm:GlobalGameViewModel">
@@ -18,16 +19,42 @@
 				Classes="Heading">
 				Created Rooms
 			</TextBlock>
-			<ScrollViewer>
-				<ListBox>
-
-				</ListBox>
+			<ScrollViewer 
+				Background="White"
+				VerticalScrollBarVisibility="Visible"
+				HorizontalScrollBarVisibility="Disabled">
+			<ListBox ItemsSource="{Binding GlobalRooms}">
+				<ListBox.ItemTemplate>
+					<DataTemplate DataType="gwar:Room">
+						<Grid ColumnDefinitions="3*,*,*">
+							<TextBlock 
+								Grid.Column="0"
+								Text="{Binding RoomName}"/>
+							<TextBlock
+								Grid.Column="1"
+								Text="{Binding FormattedPlayerCount}"/>
+							<TextBlock
+								Grid.Column="2"
+								Text="{Binding FormattedGameMode}"/>
+						</Grid>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
 			</ScrollViewer>
-			<TextBlock
-				Classes="Heading">
-				Chat
-			</TextBlock>
-			<ScrollViewer>
+				<ListBox>
+				<ListBox.ItemTemplate>
+				<DataTemplate DataType="gwar:ChatItem">
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Text="{Binding PlayerName}"/>
+						<TextBlock Text="{Binding Message}"/>
+					</StackPanel>
+				</DataTemplate>
+				</ListBox.ItemTemplate>
+				</ListBox>
+			<ScrollViewer 
+				Background="White"
+				VerticalScrollBarVisibility="Visible"
+				HorizontalScrollBarVisibility="Auto">
 				<TextBlock Text="{Binding Chat}"/>
 			</ScrollViewer>
 			<TextBox>
@@ -46,27 +73,18 @@
 				VerticalAlignment="Stretch"
 				DockPanel.Dock="Top">
 				<ListBox ItemsSource="{Binding Players}">
-					<ListBox.ItemTemplate>
-						<DataTemplate>
-							<Border 
-								BorderBrush="Black"
-								BorderThickness="1">
-								<TextBlock Text="{Binding}"/>
-							</Border>
-						</DataTemplate>
-					</ListBox.ItemTemplate>
 				</ListBox>
 			</ScrollViewer>
-			<Button 
-				DockPanel.Dock="Top"
-				>
-				Create
-			</Button>
-			<Button 
+			<Button
 				DockPanel.Dock="Bottom"
 				Command="{Binding BackCommand}">
 				Back
 			</Button>
+			<Button 
+				DockPanel.Dock="Bottom">
+				Create
+			</Button>
+			
 		</DockPanel>
 	</Grid>
 </UserControl>

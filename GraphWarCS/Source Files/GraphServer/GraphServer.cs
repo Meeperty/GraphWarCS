@@ -15,7 +15,7 @@ namespace GraphWarCS
 		private Socket serverSocket;
 		private IPEndPoint ipEndPoint;
 
-		private List<ClientConnection> clients = new();
+		private List<ClientSideConnection> clients = new();
 		private List<Player> players = new();
 		private bool acceptingConnections;
 
@@ -50,10 +50,10 @@ namespace GraphWarCS
 				}
 				else
 				{
-					ClientConnection client = new ClientConnection(this, socket);
-					client.SendMessage($"{NetworkConstants.GAME_FULL}");
+					ServerSideConnection connection = new ServerSideConnection(this, socket);
+					connection.SendMessage($"{NetworkCode.GAME_FULL}");
 
-					client.Disconnect();
+					connection.Disconnect();
 				}
 			}
 		}

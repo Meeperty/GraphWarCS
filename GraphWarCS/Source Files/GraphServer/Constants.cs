@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,20 +11,17 @@ namespace GraphWarCS
 	public static class Constants
 	{
 		public static IBrush bgBrush = new SolidColorBrush(new Color(byte.MaxValue, 158, 215, 155));
-
-		public static int WIDTH = 800;
-		public static int HEIGHT = 600;
-	
-		public static int FIELDS_HEIGHT = 25;
 	
 		public static int TIMEOUT_CONNECTING = 10000;
 		public static int TIMEOUT_KEEPALIVE = 5000;
-		public static int TIMEOUT_DROP = 30000;
+		public static int TIMEOUT_DROP = TIMEOUT_DROP * 6;
 	
-		public static string GLOBAL_IP = "www.graphwar.com";
-		public static int DEFAULT_PORT = 6112;
-		public static int GLOBAL_PORT = 23761;
-		public static int PUBLIC_ROOM_PORT = 28842;
+		//public static string GLOBAL_IP = "www.graphwar.com";
+		//public static int DEFAULT_PORT = 6112;
+		//public static int GLOBAL_PORT = 23761;
+		//public static int PUBLIC_ROOM_PORT = 28842;
+
+		public static IPEndPoint GlobalServerEndPoint = new(Dns.GetHostAddresses("www.graphwar.com")[0], 23761);
 	
 		public static string DUMMY_NAME = "23E(S_%24%40)!Xc";
 		//public static String ENCODED_DUMMY_NAME = "%23E(S_%24%40)!Xc";
@@ -38,9 +36,6 @@ namespace GraphWarCS
 		public static int INITIAL_NUM_SOLDIERS = 2;
 	
 		public static int MAXIMUM_COLOR_MODULE_SQUARED = 3*160*160;
-	
-		public static int TEAM1 = 1;
-		public static int TEAM2 = 2;
 	
 		public static int NORMAL_FUNC = 0;
 		public static int FST_ODE = 1;
@@ -101,12 +96,5 @@ namespace GraphWarCS
 		public static int COMPUTER_LEVEL_STANDARD_DEVIATION = 40;
 		public static int COMPUTER_LEVEL_MEAN_VALUE = 50;
 		public static int COMPUTER_LEVEL_MIN_VALUE = 10;
-	}
-
-	public enum GameState
-	{
-		NONE = 0,
-		PRE_GAME = 1,
-		GAME = 2
 	}
 }

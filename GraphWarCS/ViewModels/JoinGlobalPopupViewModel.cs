@@ -27,7 +27,7 @@ namespace GraphWarCS.ViewModels
 			});
 		}
 
-		private string name;
+		private string name = "";
 		public string Name 
 		{
 			get { return name; }

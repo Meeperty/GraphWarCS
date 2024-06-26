@@ -28,9 +28,13 @@ public class MainViewModel : ViewModelBase
 		ContentViewModel = new GlobalGameViewModel(this, playerName);
 	}
 
-	public void BackToMainScreen()
+	public void BackToMainScreen(bool disconnected)
 	{
 		ContentViewModel = new MainMenuViewModel(this);
+	}
+	public void BackToMainScreen() //this is like this because ReactiveCommand wont take a method with an optional argument
+	{
+		BackToMainScreen(false);
 	}
 
 	private GraphServer graphServer;

@@ -11,7 +11,7 @@ namespace GraphWarCS.Views
 			InitializeComponent();
 		}
 
-		public void Close()
+		new public void Close()
 		{
 			base.Close();
 		}
