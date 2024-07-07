@@ -1,13 +1,5 @@
-﻿using Avalonia.Controls;
-using Avalonia.Interactivity;
-using GraphWarCS.Views;
-using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using ReactiveUI;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace GraphWarCS.ViewModels
@@ -18,8 +10,8 @@ namespace GraphWarCS.ViewModels
 		{
 			ShowJoinGlobalDialog = new();
 
-			ShowJoinGlobalCommand = ReactiveCommand.CreateFromTask(async () => 
-			{ 
+			ShowJoinGlobalCommand = ReactiveCommand.CreateFromTask(async () =>
+			{
 				var vm = new JoinGlobalPopupViewModel();
 
 				string? result = await ShowJoinGlobalDialog.Handle(vm);

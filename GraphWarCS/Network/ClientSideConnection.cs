@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace GraphWarCS
 {
-	//public delegate void HandleMessage(NetworkCode code, params string[] args);
 	public delegate void HandleMessage(HandleMessageEventArgs messageHandlerArgs);
 
 	public class ClientSideConnection
@@ -34,6 +33,18 @@ namespace GraphWarCS
 			runThread.Start();
 
 			connection = new Connection(Constants.GlobalServerEndPoint);
+
+			SendMessage(playerName);
+
+			keepAliveTimer = new Timer(SendKeepAlive, null, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(5));
+		}
+
+		public ClientSideConnection(string playerName, IPEndPoint endpoint)
+		{
+			runThread = new Thread(Run);
+			runThread.Start();
+
+			connection = new Connection(endpoint);
 
 			SendMessage(playerName);
 

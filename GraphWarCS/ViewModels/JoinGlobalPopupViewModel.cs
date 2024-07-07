@@ -1,12 +1,5 @@
-﻿using Avalonia.Rendering.Composition;
-using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using ReactiveUI;
 using System.Reactive;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GraphWarCS.ViewModels
 {
@@ -17,18 +10,18 @@ namespace GraphWarCS.ViewModels
 
 		public JoinGlobalPopupViewModel()
 		{
-			JoinCommand = ReactiveCommand.Create<string?>(() => 
-			{ 
+			JoinCommand = ReactiveCommand.Create<string?>(() =>
+			{
 				return Name;
 			});
-			BackCommand = ReactiveCommand.Create<string?>(() => 
+			BackCommand = ReactiveCommand.Create<string?>(() =>
 			{
 				return null;
 			});
 		}
 
 		private string name = "";
-		public string Name 
+		public string Name
 		{
 			get { return name; }
 			set { this.RaiseAndSetIfChanged(ref name, value); }

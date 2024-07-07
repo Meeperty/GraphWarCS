@@ -1,6 +1,4 @@
-﻿using Avalonia.Media;
-
-namespace GraphWarCS
+﻿namespace GraphWarCS
 {
 	public class ChatItem
 	{

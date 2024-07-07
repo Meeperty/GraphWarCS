@@ -68,7 +68,7 @@
 		/// <summary>
 		/// ???
 		/// </summary>
-		SET_READY = 21,	
+		SET_READY = 21,
 
 		/// <summary>
 		/// ???
@@ -84,108 +84,108 @@
 		/// ???
 		/// </summary>
 		FIRE_FUNC = 24,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		NEXT_TURN = 25,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		SEND_FUNC = 26,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		READY_NEXT_TURN = 27,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		SET_ANGLE = 28,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		REMOVE_PLAYER = 29,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		END_GAME = 30,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		NEXT_MODE = 31,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		PREVIOUS_MODE = 32,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		SET_MODE = 33,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		CHANGE_ANGLE = 34,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		KILL_PLAYER = 35,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		CONNECTION_ACCEPTED = 36,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		TIME_UP = 37,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		GAME_FULL = 38,
-		
+
 		/// <summary>
 		/// Sent from client to server to disconnect
 		/// </summary>
 		DISCONNECT = 39,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		GAME_FINISHED = 40,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		NEW_LEADER = 41,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		START_COUNTDOWN = 42,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		REORDER = 43,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		FUNCTION_PREVIEW = 44,
-		
-		
+
+
 
 		/// <summary>
 		/// Sent back from the server to client upon joining
@@ -197,12 +197,12 @@
 		/// player ID
 		/// </remarks>
 		JOIN = 101,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		SAY_CHAT = 102,
-		
+
 		/// <summary>
 		/// Sent back from the server to client upon joining, lists players
 		/// </summary>
@@ -211,12 +211,12 @@
 		/// 103&
 		/// num players&
 		/// { repeat for each player
-			/// player name&
-			/// ID
+		/// player name&
+		/// ID
 		/// }
 		/// </remarks>
 		LIST_PLAYERS = 103,
-		
+
 		/// <summary>
 		/// Sent back from the server to client upon joining, lists global rooms
 		/// </summary>
@@ -225,14 +225,14 @@
 		/// 104&
 		/// num rooms&
 		/// { repeat for each room
-			/// room name&
-			/// ID&
-			/// gamemode&
-			/// num players
+		/// room name&
+		/// ID&
+		/// gamemode&
+		/// num players
 		/// }
 		/// </remarks>
 		LIST_ROOMS = 104,
-		
+
 		/// <summary>
 		/// Sent from server to client to indicate that a room's status has changed
 		/// </summary>
@@ -244,7 +244,7 @@
 		/// new num players
 		/// </remarks>
 		ROOM_STATUS = 105,
-		
+
 		/// <summary>
 		/// Sent from server to client to indicate that a player has quit
 		/// </summary>
@@ -254,17 +254,17 @@
 		/// ID of player who quit
 		/// </remarks>
 		QUIT = 106,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		CLOSE_ROOM = 107,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>
 		CREATE_ROOM = 108,
-		
+
 		/// <summary>
 		/// ???
 		/// </summary>

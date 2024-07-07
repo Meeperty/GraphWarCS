@@ -1,26 +1,19 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using GraphWarCS.Network;
 using ReactiveUI;
-using Avalonia.Controls;
+using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using GraphWarCS.Network;
 using System.ComponentModel;
-using GraphWarCS.Views;
-using System.Threading;
+using System.Linq;
+using System.Windows.Input;
 
 namespace GraphWarCS.ViewModels
 {
 	public class GlobalGameViewModel : ViewModelBase
 	{
 		public ICommand BackCommand { get; set; }
+		public ICommand JoinCommand { get; set; }
 		public ICommand CreateGlobalCommand { get; set; }
-		
+
 		new public event PropertyChangedEventHandler? PropertyChanged;
 
 		public ObservableCollection<ChatItem> Chat { get { return new(client.Chat); } }
@@ -28,12 +21,13 @@ namespace GraphWarCS.ViewModels
 		public ObservableCollection<Room> GlobalRooms { get { return new(client.Rooms); } }
 
 		public ObservableCollection<string> Players { get { return new(client.Players.ToList().Select(x => x.Value).ToList()); } }
-		
+
 		private GlobalClient client;
 
 		public GlobalGameViewModel(MainViewModel parentModel, string playerName)
 		{
 			BackCommand = ReactiveCommand.Create(parentModel.BackToMainScreen);
+
 			CreateGlobalCommand = ReactiveCommand.Create(() => { throw new NotImplementedException(); });
 
 			client = new GlobalClient(playerName);

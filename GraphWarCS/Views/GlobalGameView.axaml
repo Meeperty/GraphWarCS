@@ -23,39 +23,44 @@
 				Background="White"
 				VerticalScrollBarVisibility="Visible"
 				HorizontalScrollBarVisibility="Disabled">
-			<ListBox ItemsSource="{Binding GlobalRooms}">
-				<ListBox.ItemTemplate>
-					<DataTemplate DataType="gwar:Room">
-						<Grid ColumnDefinitions="3*,*,*">
-							<TextBlock 
-								Grid.Column="0"
-								Text="{Binding RoomName}"/>
-							<TextBlock
-								Grid.Column="1"
-								Text="{Binding FormattedPlayerCount}"/>
-							<TextBlock
-								Grid.Column="2"
-								Text="{Binding FormattedGameMode}"/>
-						</Grid>
-					</DataTemplate>
-				</ListBox.ItemTemplate>
-			</ListBox>
-			</ScrollViewer>
-				<ListBox>
-				<ListBox.ItemTemplate>
-				<DataTemplate DataType="gwar:ChatItem">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding PlayerName}"/>
-						<TextBlock Text="{Binding Message}"/>
-					</StackPanel>
-				</DataTemplate>
-				</ListBox.ItemTemplate>
+				<ListBox 
+					ItemsSource="{Binding GlobalRooms}">
+					<ListBox.ItemTemplate>
+						<DataTemplate DataType="gwar:Room">
+							<Grid ColumnDefinitions="3*,*,*">
+								<TextBlock 
+									Grid.Column="0"
+									Text="{Binding RoomName}"/>
+								<TextBlock
+									Grid.Column="1"
+									Text="{Binding FormattedPlayerCount}"/>
+								<TextBlock
+									Grid.Column="2"
+									Text="{Binding FormattedGameMode}"/>
+							</Grid>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
 				</ListBox>
+			</ScrollViewer>
+			<Button>
+				Join
+			</Button>
 			<ScrollViewer 
 				Background="White"
 				VerticalScrollBarVisibility="Visible"
 				HorizontalScrollBarVisibility="Auto">
-				<TextBlock Text="{Binding Chat}"/>
+				<ListBox
+					ItemsSource="{Binding Chat}">
+					<ListBox.ItemTemplate>
+						<DataTemplate DataType="gwar:ChatItem">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="{Binding PlayerName}" FontWeight="Bold"/>
+								<TextBlock Text=": " FontWeight="Bold"/>
+								<TextBlock Text="{Binding Message}"/>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
 			</ScrollViewer>
 			<TextBox>
 				

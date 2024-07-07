@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 
 namespace GraphWarCS
 {
@@ -21,8 +16,8 @@ namespace GraphWarCS
 		public string Port { get => endPoint.Port.ToString(); }
 		public string PlayerCount { get => playerCount.ToString(); }
 		public string FormattedPlayerCount { get => $"{playerCount}/{Constants.MAX_PLAYERS}"; }
-		public string FormattedGameMode 
-		{ 
+		public string FormattedGameMode
+		{
 			get
 			{
 				switch (gameMode)
@@ -34,7 +29,7 @@ namespace GraphWarCS
 					default:
 						return "y";
 				}
-			} 
+			}
 		}
 
 		public Room(string name, int roomID, IPEndPoint endpoint, GameMode mode, int players)

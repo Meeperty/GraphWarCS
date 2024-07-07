@@ -1,8 +1,5 @@
-﻿using Avalonia.Controls;
-using Avalonia.Media;
+﻿using Avalonia.Media;
 using ReactiveUI;
-using System.Reactive.Linq;
-using System.Windows.Input;
 
 namespace GraphWarCS.ViewModels;
 
@@ -32,18 +29,13 @@ public class MainViewModel : ViewModelBase
 	{
 		ContentViewModel = new MainMenuViewModel(this);
 	}
-	public void BackToMainScreen() //this is like this because ReactiveCommand wont take a method with an optional argument
+	public void BackToMainScreen() //this is here because ReactiveCommand wont take a method with an optional argument
 	{
 		BackToMainScreen(false);
 	}
 
-	private GraphServer graphServer;
-	public GraphServer GraphServer => graphServer;
+	//public void JoinLobby(Connection)
+	//{
 
-	//private GameData gameData;
-	//public GameData GameData => gameData;
-
-	//private GlobalClient globalClient;
-	//public GlobalClient GlobalClient => globalClient;
-
+	//}
 }
